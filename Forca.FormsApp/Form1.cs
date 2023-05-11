@@ -90,5 +90,31 @@ namespace Forca.FormsApp
             }
         }
 
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            forca.GerarPalavra();
+            forca.LetrasEscolhidas.Clear();
+            lblPalavra.Text = forca.palavraCriptografada;
+
+            foreach (Control controle in panelLetras.Controls)
+            {
+                if (controle is Button)
+                {
+                    ((Button)controle).BackColor = Color.Black;
+                }
+            }
+
+            foreach (Control control in this.Controls)
+            {
+                if (control is PictureBox)
+                {
+                    PictureBox pictureBox = (PictureBox)control;
+                    pictureBox.Visible = false;
+                }
+            }
+            imgForca.Visible = true;
+            numErros = 0;
+
+        }
     }
 }

@@ -20,6 +20,13 @@ namespace Forca.FormsApp
             palavraCriptografada = new string('_', palavraRandom.Length);
             LetrasEscolhidas = new List<char>();
         }
+
+        public void GerarPalavra()
+        {
+            Random random = new Random();
+            palavraRandom = palavras[random.Next(palavras.Length)];
+            palavraCriptografada = new string('_', palavraRandom.Length);
+        }
     }
 }
 
